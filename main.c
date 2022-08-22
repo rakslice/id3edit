@@ -954,7 +954,7 @@ int CopyArgument(char **dst, char *src)
         return -1;
     }
 
-    strncpy(*dst, src, length);
+    memcpy(*dst, src, sizeof(char)*(length+1));
     return 0;
 }
 

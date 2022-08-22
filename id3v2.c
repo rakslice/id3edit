@@ -38,7 +38,7 @@ int ID3V2_Open(ID3V2 **id3v2, const char *path, bool createtag)
         return ID3V2ERROR_FATAL;
     }
 
-    strncpy(id3->path, path, pathlength);
+	memcpy(id3->path, path, sizeof(char)*pathlength);
 
     // Open file
     id3->file = fopen(path, "rb");
