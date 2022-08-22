@@ -12,6 +12,8 @@
 #include <printhex.h>
 #include <stdbool.h>
 
+#include "endian.h"
+
 #define VERSION "2.1.2"
 
 int CopyArgument(char **dst, char *src);

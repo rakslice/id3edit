@@ -11,6 +11,9 @@
 #include <crc32.h>
 
 
+#include "endian.h"
+
+
 bool OPT_PrintHeader = false;
 
 int ID3V2_Open(ID3V2 **id3v2, const char *path, bool createtag)
