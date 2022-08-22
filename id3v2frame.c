@@ -143,7 +143,7 @@ int ID3V2_GetPictureFrame(const ID3V2 *id3v2, unsigned char pictype,
         fprintf(stderr, "Fatal Error! - malloc returned NULL!\n");
         return ID3V2ERROR_FATAL;
     }
-	memcpy(mime, (char*)&rawdata[rawoffset], sizeof(char) * (mimesize + 1)); // from offset 1 all chars + '\0'
+    memcpy(mime, (char*)&rawdata[rawoffset], sizeof(char) * (mimesize + 1)); // from offset 1 all chars + '\0'
     rawoffset += mimesize + 1; // mimetype-string + '\0'
     
     // picture type
