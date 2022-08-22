@@ -974,7 +974,12 @@ int ValidatePath(char **path, int accessmode) // accessmode: W_OK|R_OK
         return 0;
 
     // Convert relative paths to absolute paths
+
+# if defined(__MINGW32__)
+    char *retval = _fullpath(NULL, *path, PATH_MAX);
+#else
     char *retval = realpath(*path, NULL);
+#endif
     if(retval == NULL)
     {
         fprintf(stderr, "Converting \"%s\" to a real path failed with error \"%s\"\n", *path, strerror(errno));
